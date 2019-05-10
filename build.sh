@@ -14,7 +14,7 @@ fi
 #install deps in folders
 echo "Setting up environment..."
 
-cd ../playground
+cd ./playground
 yarn install
 yarn build
 
