@@ -22,8 +22,7 @@ class Btn_basic extends React.Component {
 
     render() {
         const { btn_type, msg } = this.props;
-        const btn_style = this.styles();
-        console.log(btn_style); 
+        const btn_style = this.styles(); 
         return  <VrButton 
                     style={btn_style.btn}
                     onEnter={() => this.setState({hover: true})}

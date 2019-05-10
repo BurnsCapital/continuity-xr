@@ -24,8 +24,7 @@ class LeftPanel extends React.Component {
                     size="normal"
                     disabled = "false"
                     msg="Primary"
-                  />
-               <Btn_basic 
+                  /><Btn_basic 
                     type="danger" 
                     size="large"
                     disabled = "false"
