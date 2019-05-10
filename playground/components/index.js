@@ -10,6 +10,9 @@ import Btn_basic from './buttons/btn_basic';
 
 import Hl from './typography/hl';
 
+//alert 
+
+import Alert from './headlock/alert';
 
 //panels
 import HomePanel from './panels/homePanel';
@@ -19,7 +22,13 @@ import RightPanel from './panels/rightPanel';
 //panel elements
 import PanelHead from './panelHead/panelHead';
 
+//grid
+
+import Row from './row/row';
+import ButtonRow2 from './row/buttonRow.2';
 export {
+   Alert,
+
    styles,
 
    Btn_basic,
@@ -29,5 +38,8 @@ export {
    HomePanel,
    LeftPanel,
    RightPanel,
-   PanelHead
+   PanelHead,
+   
+   Row,
+   ButtonRow2,
 }

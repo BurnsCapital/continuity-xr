@@ -10,7 +10,7 @@ function init(bundle, parent, options = {}) {
     fullScreen: true,
     ...options,
   });
- 
+  
   // create panels 
   const leftPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
   leftPanel.setAngle(-0.6, 0);
@@ -20,7 +20,7 @@ function init(bundle, parent, options = {}) {
 
   const rightPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
   rightPanel.setAngle(0.6, 0);
-
+  
   r360.renderToSurface(
     r360.createRoot('LeftPanel'),
     leftPanel,
@@ -30,11 +30,11 @@ function init(bundle, parent, options = {}) {
     r360.createRoot('RightPanel'),
     rightPanel,
   );
-
+  const camPos = r360.getCameraQuaternion;
   // Render your app content to the default cylinder surface
   r360.renderToSurface(
     r360.createRoot('HomePanel', 
-    { /* initial props */ }),
+    { pos : camPos }),
     homePanel,
   );
 
