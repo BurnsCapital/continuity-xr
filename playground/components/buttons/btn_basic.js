@@ -58,21 +58,21 @@ class Btn_basic extends React.Component {
         switch(this.props.size){
             case 'small':
                 txt_size = 12;
-                (this.state.hover) ? btn_width = 100 : btn_width = 83; 
-                (this.state.hover) ? btn_height = 30 : btn_height = 25;
+                btn_width = 83; 
+                btn_height = 25;
                 break;
             case 'large':
                 txt_size = 25;
-                (this.state.hover) ? btn_width = 159 : btn_width = 133; 
-                (this.state.hover) ? btn_height = 48 : btn_height = 40;
+                btn_width = 133; 
+                btn_height = 40;
                 break;
             default: 
                 txt_size = 20;
-                (this.state.hover) ? btn_width = 120 : btn_width = 100; 
-                (this.state.hover) ? btn_height = 36 : btn_height = 30;
+                btn_width = 100; 
+                btn_height = 30;
         };
         //change border on hover
-        let btn_border = (this.state.hover) ? hue.grayDark : hue.light;
+        let btn_border = (this.state.hover) ? hue.light : hue.dark;
         
         //change text color if disabled
         let txt_hue = (this.props.disabled) ? hue.light : hue.dark ;
@@ -83,7 +83,7 @@ class Btn_basic extends React.Component {
                 fontWeight: 'bold',
                 fontSize: txt_size,
                 textAlign: 'center',
-                borderColor : hue.grayDark,
+                borderColor : hue.light,
                 borderWidth : 5,
               },
               btn : {
@@ -93,10 +93,11 @@ class Btn_basic extends React.Component {
                 borderWidth : 1,
                 borderRadius: 5,
                 backgroundColor : bg_color,
+                opacity: .85,
                 shadowOffset : {width: 0, height: 6},
                 shadowColor : hue.dark,
                 shadowOpacity : .5,
-                transform: [{ rotateX : '20deg' },
+                transform: [{ rotateX : 20 },
                             { translateY: 4}
                           ],
                 overflow : 'hidden',
