@@ -11,34 +11,46 @@ function init(bundle, parent, options = {}) {
     ...options,
   });
   
-  // create panels 
-  const leftPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
-  leftPanel.setAngle(-0.6, 0);
-
-  const homePanel = new Surface(300, 600, Surface.SurfaceShape.Cylinder);
-  homePanel.setAngle(0, 0);
-
-  const rightPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
-  rightPanel.setAngle(0.6, 0);
+  // create zones 
   
-  r360.renderToSurface(
-    r360.createRoot('LeftPanel'),
-    leftPanel,
-  );
+  //user tray
+  const trayZone = new Surface(1200, 350, Surface.SurfaceShape.Flat);
+  trayZone.setAngle(0, -Math.PI / 6);
   
-  r360.renderToSurface(
-    r360.createRoot('RightPanel'),
-    rightPanel,
-  );
-  const camPos = r360.getCameraQuaternion;
-  // Render your app content to the default cylinder surface
-  r360.renderToSurface(
-    r360.createRoot('HomePanel', 
-    { pos : camPos }),
-    homePanel,
-  );
+  //main zones
+  const frontZone = new Surface(900, 750, Surface.SurfaceShape.Cylinder);
+  frontZone.setAngle(0, 0);
 
-  // Load the initial environment
+  const rightZone = new Surface(900, 750, Surface.SurfaceShape.Flat);
+  rightZone.setAngle( Math.PI / 2 , 0);
+  
+  const rearZone = new Surface(900, 750, Surface.SurfaceShape.Flat);
+  rearZone.setAngle(Math.PI, 0);
+  
+  const leftZone = new Surface(900, 750, Surface.SurfaceShape.Flat);
+  leftZone.setAngle( -Math.PI / 2, 0);
+  
+  //create half face zones
+  
+  //render everything to zones
+  r360.renderToSurface( 
+    r360.createRoot('FrontZone'), 
+    frontZone,
+    );
+  r360.renderToSurface( 
+    r360.createRoot('RightZone'), 
+    rightZone,
+    );
+  r360.renderToSurface( r360.createRoot('RearZone'), rearZone,);
+  r360.renderToSurface( r360.createRoot('LeftZone'), leftZone,);
+  r360.renderToSurface( r360.createRoot('TrayZone'), trayZone,);
+
+  //recenter the floating tray
+  setInterval(()=> {
+    const cameraQuat = r360.getCameraQuaternion();
+    trayZone.recenter(cameraQuat, 'yaw');
+   },100);
+   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('office360.jpg'));
 }
 

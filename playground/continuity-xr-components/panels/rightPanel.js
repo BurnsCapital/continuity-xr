@@ -1,10 +1,10 @@
-import React from 'react';
+import React from './node_modules/react';
 import {
     AppRegistry,
     StyleSheet,
     Text,
     View,
-  } from 'react-360';
+  } from './node_modules/react-360';
   
 class RightPanel extends React.Component {
   constructor() {
@@ -39,11 +39,12 @@ export default RightPanel;
 const styles = StyleSheet.create({
     panel: {
       // Fill the entire surface
-      width: 300,
+      width: 150,
       height: 600,
       backgroundColor: 'rgba(255, 255, 255, 0.4)',
       justifyContent: 'center',
       alignItems: 'center',
+      transform: [{translateX: 150}],
     },
     greetingBox: {
       padding: 20,
