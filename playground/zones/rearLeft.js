@@ -4,7 +4,7 @@ import { Icon } from 'react-native-vector-icons';
 
 import { Hl , Btn_floating , Row} from '../index';
 
-class HomePanel extends React.Component {
+class RearLeft extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};   
@@ -36,7 +36,7 @@ class HomePanel extends React.Component {
   
 }
 
-export default HomePanel;
+export default RearLeft;
 
 const styles = StyleSheet.create({
     panel: {

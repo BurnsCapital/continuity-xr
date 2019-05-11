@@ -7,21 +7,21 @@
  */
 
 import Front from './front';
-import FrontRight from './FrontRight';
-import Right from './Right';
-import BackRight from './BackRight';
-import Back from './Back';
-import BackLeft from './BackLeft';
-import Left from './Left';
-import LeftFront from './LeftFront';
+import FrontRight from './frontRight';
+import Right from './right';
+import RearRight from './rearRight';
+import Rear from './rear';
+import RearLeft from './rearLeft';
+import Left from './left';
+import LeftFront from './leftFront';
 
 export {
     Front,
     FrontRight,
     Right,
-    BackRight,
-    Back,
-    BackLeft,
+    RearRight,
+    Rear,
+    RearLeft,
     Left,
     LeftFront
 }

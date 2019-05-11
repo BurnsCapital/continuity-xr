@@ -11,34 +11,27 @@ function init(bundle, parent, options = {}) {
     ...options,
   });
   
-  // create panels 
-  const leftPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
-  leftPanel.setAngle(-0.6, 0);
+  // create zones 
+  //main zones
+  const frontZone = new Surface(900, 600, Surface.SurfaceShape.Cylinder);
+  frontZone.setAngle(0, 0);
 
-  const homePanel = new Surface(900, 600, Surface.SurfaceShape.Cylinder);
-  homePanel.setAngle(0, 0);
+  const rightZone = new Surface(900, 600, Surface.SurfaceShape.Cylinder);
+  rightZone.setAngle(1, 0);
   
-
-  const rightPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
-  rightPanel.setAngle(0.6, 0);
+  const rearZone = new Surface(900, 600, Surface.SurfaceShape.Cylinder);
+  rearZone.setAngle(1.5, 0);
   
-  r360.renderToSurface(
-    r360.createRoot('LeftPanel'),
-    leftPanel,
-  );
+  const leftZone = new Surface(900, 600, Surface.SurfaceShape.Cylinder);
+  leftZone.setAngle(-1, 0);
+  //create half face zones
   
-  r360.renderToSurface(
-    r360.createRoot('RightPanel'),
-    rightPanel,
-  );
-  const camPos = r360.getCameraQuaternion;
-  // Render your app content to the default cylinder surface
-  r360.renderToSurface(
-    r360.createRoot('HomePanel', 
-    { pos : camPos }),
-    homePanel,
-  );
-
+  //render everything to zones
+  r360.renderToSurface( r360.createRoot('FrontZone'), frontZone,);
+  r360.renderToSurface( r360.createRoot('RightZone'), rightZone,);
+  r360.renderToSurface( r360.createRoot('RearZone'), rearZone,);
+  r360.renderToSurface( r360.createRoot('LeftZone'), leftZone,);
+  
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('office360.jpg'));
 }
