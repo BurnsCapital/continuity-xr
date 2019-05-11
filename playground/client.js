@@ -2,9 +2,11 @@
 // If you want to modify your application's content, start in "index.js"
 
 import {ReactInstance, Location, Surface} from 'react-360-web';
-
+import { palette } from './continuity-xr-components';
 
 function init(bundle, parent, options = {}) {
+  
+  
   const r360 = new ReactInstance(bundle, parent, {
     // Add custom options here
     fullScreen: true,
@@ -34,22 +36,24 @@ function init(bundle, parent, options = {}) {
   
   //render everything to zones
   r360.renderToSurface( 
-    r360.createRoot('FrontZone'), 
+    r360.createRoot('FrontZone',{ hue = palette }), 
     frontZone,
     );
   r360.renderToSurface( 
-    r360.createRoot('RightZone'), 
+    r360.createRoot('RightZone',{ hue = palette }), 
     rightZone,
     );
-  r360.renderToSurface( r360.createRoot('RearZone'), rearZone,);
-  r360.renderToSurface( r360.createRoot('LeftZone'), leftZone,);
-  r360.renderToSurface( r360.createRoot('TrayZone'), trayZone,);
+  r360.renderToSurface( r360.createRoot('RearZone', { hue = palette }), rearZone,);
+  r360.renderToSurface( r360.createRoot('LeftZone',{ hue = palette }), leftZone,);
+  r360.renderToSurface( r360.createRoot('TrayZone',{ hue = palette }), trayZone,);
 
   //recenter the floating tray
   setInterval(()=> {
     const cameraQuat = r360.getCameraQuaternion();
     trayZone.recenter(cameraQuat, 'yaw');
    },100);
+
+   
    // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('office360.jpg'));
 }

@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
       // Fill the entire surface
       width: 850,
       height: 750,
-      backgroundColor: 'rgba(255, 0, 0, 1)',
+      backgroundColor: this.props.hue[danger],
       transform: [{translateX: 25}],
       //    justifyContent: 'center',
       //alignItems: 'center',

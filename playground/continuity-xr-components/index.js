@@ -1,5 +1,6 @@
-//master Stylesheet(obs not modular)
-import styles from './styles';
+//master color sheet
+
+import palette from './palette';
 
 //buttons
 
@@ -19,9 +20,8 @@ import Row from './row/row';
 
 export {
 
-
-   styles,
-
+   palette,
+   
    Btn_basic,
    Btn_floating,
 
