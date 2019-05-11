@@ -1,6 +1,4 @@
-import React from 'react';
 import {StyleSheet } from 'react-360';
-
 
 //define colors
 var hue = {

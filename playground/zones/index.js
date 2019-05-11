@@ -5,7 +5,7 @@
  * and larger zones are curved
  *   
  */
-
+import Tray from './tray';
 import Front from './front';
 import FrontRight from './frontRight';
 import Right from './right';
@@ -13,9 +13,10 @@ import RearRight from './rearRight';
 import Rear from './rear';
 import RearLeft from './rearLeft';
 import Left from './left';
-import LeftFront from './leftFront';
+import FrontLeft from './frontLeft';
 
 export {
+    Tray,
     Front,
     FrontRight,
     Right,
@@ -23,5 +24,5 @@ export {
     Rear,
     RearLeft,
     Left,
-    LeftFront
+    FrontLeft
 }

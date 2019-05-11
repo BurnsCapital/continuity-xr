@@ -1,9 +1,9 @@
-import React from 'react';
+import React from './node_modules/react';
 import {
     StyleSheet,
     View,
-  } from 'react-360';
-import { PanelHead, Btn_basic, Btn_floating } from '../index.js';
+  } from './node_modules/react-360';
+import { PanelHead, Btn_basic, Btn_floating } from '../index.js.js.js';
   
 class LeftPanelSlim extends React.Component {
   constructor() {

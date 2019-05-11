@@ -1,10 +1,10 @@
-import React from 'react';
+import React from './node_modules/react';
 import {
     AppRegistry,
     StyleSheet,
     Text,
     View,
-  } from 'react-360';
+  } from './node_modules/react-360';
   
 class RightPanel extends React.Component {
   constructor() {
