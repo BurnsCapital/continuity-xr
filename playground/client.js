@@ -2,10 +2,8 @@
 // If you want to modify your application's content, start in "index.js"
 
 import {ReactInstance, Location, Surface} from 'react-360-web';
-import { palette } from './continuity-xr-components';
 
 function init(bundle, parent, options = {}) {
-  
   
   const r360 = new ReactInstance(bundle, parent, {
     // Add custom options here
@@ -35,17 +33,12 @@ function init(bundle, parent, options = {}) {
   //create half face zones
   
   //render everything to zones
-  r360.renderToSurface( 
-    r360.createRoot('FrontZone',{ hue = palette }), 
-    frontZone,
-    );
-  r360.renderToSurface( 
-    r360.createRoot('RightZone',{ hue = palette }), 
-    rightZone,
-    );
-  r360.renderToSurface( r360.createRoot('RearZone', { hue = palette }), rearZone,);
-  r360.renderToSurface( r360.createRoot('LeftZone',{ hue = palette }), leftZone,);
-  r360.renderToSurface( r360.createRoot('TrayZone',{ hue = palette }), trayZone,);
+  //let hue = palette;
+  r360.renderToSurface( r360.createRoot('FrontZone',{ }), frontZone,);
+  r360.renderToSurface( r360.createRoot('RightZone',{ }), rightZone, );
+  r360.renderToSurface( r360.createRoot('RearZone',{ }), rearZone,);
+  r360.renderToSurface( r360.createRoot('LeftZone',{ }), leftZone,);
+  r360.renderToSurface( r360.createRoot('TrayZone',{ }), trayZone,);
 
   //recenter the floating tray
   setInterval(()=> {
