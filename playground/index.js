@@ -1,9 +1,9 @@
 import React from 'react';
 import { AppRegistry } from 'react-360';
 
-import { HomePanel, RightPanel, LeftPanel} from './components';
+import * from './zones';
 
 
 AppRegistry.registerComponent('HomePanel', () => HomePanel);
-AppRegistry.registerComponent('LeftPanel', () => LeftPanel);
+AppRegistry.registerComponent('LeftPanel', () => LeftPanelSlim);
 AppRegistry.registerComponent('RightPanel', () => RightPanel);

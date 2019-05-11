@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
+import { Icon } from 'react-native-vector-icons';
 
 import { Hl , Btn_floating , Row} from '../index';
 
@@ -20,6 +21,9 @@ class HomePanel extends React.Component {
                 onExit={() => this.setState({hover: false})}>
                     <Row>
                       <Btn_floating >
+                        <Icon 
+                          name='g-translate'
+                          color='#00aced' />
                       </Btn_floating> 
                       <Btn_floating size='large' color='info' />
                       <Btn_floating msg='1' size='small' />

@@ -1,31 +1,27 @@
 import React from 'react';
 import {
-    AppRegistry,
     StyleSheet,
-    Text,
     View,
   } from 'react-360';
+import { PanelHead, Btn_basic, Btn_floating } from '../index.js';
   
-class RightPanel extends React.Component {
+class LeftPanelSlim extends React.Component {
   constructor() {
     super();
     this.state = { 
-        hover: false 
+        hover: false,
+        cats :[ "blockchain", "Artificial Intelegence", "Extended Reality" ] 
     };
   }
 
   render() {
+    const { cats } = this.state;
     return  <View style={styles.panel}
                 onEnter={() => this.setState({hover: true})}
                 onExit={() => this.setState({hover: false})}>
-                <View style={styles.greetingBox}>
-                    <Text style={styles.greeting}>
-                        {this.state.hover
-                         ? "Home panel has loaded!"
-                         : "Not hovering"
-                         }
-                    </Text>
-                </View>
+              <Btn_floating />
+              <Btn_floating />
+              <Btn_floating />
             </View>;
   }
 
@@ -34,7 +30,7 @@ class RightPanel extends React.Component {
   }
 }
 
-export default RightPanel;
+export default LeftPanelSlim;
 
 const styles = StyleSheet.create({
     panel: {
@@ -44,16 +40,6 @@ const styles = StyleSheet.create({
       backgroundColor: 'rgba(255, 255, 255, 0.4)',
       justifyContent: 'center',
       alignItems: 'center',
-      transform: [{translateX: 150}],
-    },
-    greetingBox: {
-      padding: 20,
-      backgroundColor: '#000000',
-      borderColor: '#639dda',
-      borderWidth: 2,
-    },
-    greeting: {
-      fontSize: 30,
     },
   });
   
