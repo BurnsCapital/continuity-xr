@@ -9,6 +9,7 @@ import Btn_floating from './fab/btn_floating';
 
 //basic card
 import Card from './card/card';
+import CardHeader from './card/cardHeader';
 
 //typo
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { toggleLight } from '../actions'
 
-import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
+import { Image, StyleSheet, Text, View, asset } from 'react-360';
 import { Hl , Btn_floating , Card, Row} from '../components';
 
 class Front extends React.Component {
@@ -26,6 +26,7 @@ class Front extends React.Component {
                 onExit={() => this.setState({hover: false})}
                 >
               <Card viewMode = {viewMode}>
+                <Image source={asset('Cody.jpg')} style={styles.image}/>
                 <Hl msg="Current Mode:" />
                 <Hl msg={viewMode} />
                 <Btn_floating 
@@ -56,6 +57,10 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(Front);
 
 const styles = StyleSheet.create({
+    image : {
+      flexGrow: 1,
+      flexBasis: 5,
+    },
     panel: {
       // Fill the entire surface
       width: 850,
