@@ -3,16 +3,19 @@ import { connect } from 'react-redux'
 import { toggleLight } from '../actions'
 
 import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
-import { Hl , Btn_floating , Row} from '../components';
+import { Hl , Btn_floating , Card, Row} from '../components';
 
 class Front extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hover: false };   
+    this.state = { 
+      hover: false,
+   };
+     
   }
   
   componentDidMount() {
-    this.setState({ hover: false });
+    this.setState({ hover: false });    
   }
   
   render() {
@@ -22,13 +25,15 @@ class Front extends React.Component {
                 onEnter={() => this.setState({hover: true})}
                 onExit={() => this.setState({hover: false})}
                 >
-            <Hl msg="Current Mode:" />
-            <Hl msg={viewMode} />
-            <Btn_floating 
-              toggleTheme = {toggleTheme}
-              viewMode = {viewMode}
-            />
-            </View>
+              <Card viewMode = {viewMode}>
+                <Hl msg="Current Mode:" />
+                <Hl msg={viewMode} />
+                <Btn_floating 
+                  viewMode = {viewMode}
+                  toggleTheme = {toggleTheme}
+                  />
+               </Card>
+              </View>
             </View>;
   }
 }
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
       // Fill the entire surface
       width: 850,
       height: 750,
-      backgroundColor: 'rgba(255, 255, 255, 1)',
+      backgroundColor: 'rgba(255, 255, 255, .3)',
       transform: [{translateX: 25}],
       justifyContent: 'center',
       alignItems: 'center',
