@@ -107,7 +107,7 @@ class Btn_floating extends React.Component {
                 shadowOffset : {width: 6, height: 10},
                 shadowColor : hue.dark,
                 shadowRadius : 20,
-                shadowOpacity : .9,
+                shadowOpacity : 1,
                 transform: btn_transform,
                
                 overflow : 'hidden',

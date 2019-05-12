@@ -45,14 +45,16 @@ class CardContainer extends React.Component {
         
         let bg_color = (this.props.viewMode == 'DAY_MODE' ) ? hue.light : hue.dark;
         const val = StyleSheet.create({
-              card : {
+              cardContainer : {
                 flex: 1,
                 alignItems: 'flex-start',
                 justifyContent : 'space-around',
-                flexDirection: 'row',
-                width : 800,
-                backgroundColor : bg_color,
-                opacity: .3,
+                flexDirection:'row',
+                flexWrap: 'wrap', 
+                width : 420,
+                height: 700,
+                backgroundColor : 'transparent',
+                opacity: 1,
                 shadowOffset : {width: 6, height: 10},
                 shadowColor : hue.dark,
                 shadowRadius : 20,
