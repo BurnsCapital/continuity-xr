@@ -16,7 +16,7 @@ echo "Setting up environment..."
 
 cd ../playground
 yarn install
-yarn build
+yarn bundle
 
 cd ..
 
