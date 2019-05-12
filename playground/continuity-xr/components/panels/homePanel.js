@@ -1,7 +1,10 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
 
-import { Hl , Btn_floating , Row} from '../index';
+import { Hl , Btn_floating , Row, LightSwitch} from '../index';
+
+import { modeView } from '../../containers';
+import { ModeFilters } from '../../actions'
 
 class HomePanel extends React.Component {
   constructor(props) {
@@ -21,6 +24,7 @@ class HomePanel extends React.Component {
                     <Row>
                       <Btn_floating >
                       </Btn_floating> 
+                      <modeView filter={ModeFilters.NIGHT_MODE}></modeView>
                       <Btn_floating size='large' color='info' />
                       <Btn_floating msg='1' size='small' />
                     </Row>
@@ -39,7 +43,7 @@ const styles = StyleSheet.create({
       // Fill the entire surface
       width: 850,
       height: 300,
-      backgroundColor: 'rgba(255, 255, 255, .35)',
+      backgroundColor: 'rgba(255, 0, 0, 1)',
       transform: [{translateX: 25}],
       //    justifyContent: 'center',
       //alignItems: 'center',

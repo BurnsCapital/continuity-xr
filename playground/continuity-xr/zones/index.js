@@ -1,3 +1,4 @@
+
 /*
  * pass through all zones 
  * each zone should be edited in this folder
@@ -14,6 +15,8 @@ import Rear from './rear';
 import RearLeft from './rearLeft';
 import Left from './left';
 import FrontLeft from './frontLeft';
+
+
 
 export {
     Tray,

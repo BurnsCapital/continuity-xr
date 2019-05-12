@@ -20,7 +20,10 @@ class Btn_floating extends React.Component {
             window.cancelAnimationFrame(this.animationFrame);
         }
     }
- 
+    handleClick() {
+        this.props.toggleTheme();
+        console.log(this.props.viewMode);
+    }
 
     render() {
         const { btn_type, msg } = this.props;
@@ -29,7 +32,7 @@ class Btn_floating extends React.Component {
                     style={btn_style.btn}
                     onEnter={() => this.setState({hover: true})}
                     onExit={() => this.setState({hover: false})}
-                    onClick={this.handleClick}
+                    onClick={() => this.handleClick()}
                 >
                     {this.props.children}
                      <Text style={btn_style.btn_text}>
@@ -84,9 +87,9 @@ class Btn_floating extends React.Component {
         //change transform  on hover
         let btn_transform = (this.state.hover) ? [{ scale : 1.05 },{translateX: btn_moveX},{translateY: btn_moveY}] : [{translateX: btn_moveX},{translateY: btn_moveY}];
         //change text color if disabled
-        let txt_hue = (this.props.disabled) ? hue.dark : hue.light ;
+        let txt_hue = (this.props.viewMode == 'DAY_MODE' ) ? hue.light : hue.dark ;
 
-        let bg_color = (this.props.color) ? hue[this.props.color] : hue.primary;
+        let bg_color = (this.props.viewMode == 'DAY_MODE' ) ? hue.primary : hue.secondary;
         const val = StyleSheet.create({
             btn_text :{
                 color : txt_hue,

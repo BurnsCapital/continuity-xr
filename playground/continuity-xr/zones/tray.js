@@ -1,9 +1,9 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
 
-import { Hl , Btn_floating , Row} from '../continuity-xr-components';
+import { Hl , Btn_floating , Row} from '../components';
 
-class Right extends React.Component {
+class Tray extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};   
@@ -14,25 +14,26 @@ class Right extends React.Component {
   }
   
   render() {
-    return <View style={styles.panel}
+    return <View> 
+           <View style={styles.panel}
                 onEnter={() => this.setState({hover: true})}
                 onExit={() => this.setState({hover: false})}>
-                   <Btn_floating />
+            
+            </View>
             </View>;
   }
 
   
 }
 
-export default Right;
+export default Tray;
 
 const styles = StyleSheet.create({
     panel: {
       // Fill the entire surface
-      width: 850,
-      height: 750,
-      backgroundColor: 'rgba(0, 0, 255, 1)',
-      transform: [{translateX: 25}],
+      width: 1200,
+      height: 350,
+      backgroundColor: 'rgba(255, 255, 0, 1)',
       //    justifyContent: 'center',
       //alignItems: 'center',
     },

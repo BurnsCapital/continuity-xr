@@ -1,5 +1,6 @@
-//master Stylesheet(obs not modular)
-import styles from './styles';
+//master color sheet
+
+import palette from './palette';
 
 //buttons
 
@@ -12,16 +13,17 @@ import Hl from './typography/hl';
 
 //panels
 
+//lightswitch
+//import LightSwitch from './lightSwitch/lightSwitch'
 
 //grid
 
 import Row from './row/row';
 
 export {
-
-
-   styles,
-
+   //LightSwitch,
+   palette,
+   
    Btn_basic,
    Btn_floating,
 

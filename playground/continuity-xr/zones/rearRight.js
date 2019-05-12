@@ -1,9 +1,9 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
 
-import { Hl , Btn_floating , Row} from '../index';
+import { Hl , Btn_floating , Row} from '../components';
 
-class Rear extends React.Component {
+class Front extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};   
@@ -18,22 +18,22 @@ class Rear extends React.Component {
            <View style={styles.panel}
                 onEnter={() => this.setState({hover: true})}
                 onExit={() => this.setState({hover: false})}>
-                    
+            
             </View>
-          </View>;
+            </View>;
   }
 
   
 }
 
-export default Rear;
+export default Front;
 
 const styles = StyleSheet.create({
     panel: {
       // Fill the entire surface
       width: 850,
       height: 300,
-      backgroundColor: 'rgba(0, 0, 0, 1)',
+      backgroundColor: 'rgba(255, 255, 255, .35)',
       transform: [{translateX: 25}],
       //    justifyContent: 'center',
       //alignItems: 'center',

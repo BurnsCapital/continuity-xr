@@ -3,8 +3,8 @@
 
 import {ReactInstance, Location, Surface} from 'react-360-web';
 
-
 function init(bundle, parent, options = {}) {
+  
   const r360 = new ReactInstance(bundle, parent, {
     // Add custom options here
     fullScreen: true,
@@ -33,23 +33,20 @@ function init(bundle, parent, options = {}) {
   //create half face zones
   
   //render everything to zones
-  r360.renderToSurface( 
-    r360.createRoot('FrontZone'), 
-    frontZone,
-    );
-  r360.renderToSurface( 
-    r360.createRoot('RightZone'), 
-    rightZone,
-    );
-  r360.renderToSurface( r360.createRoot('RearZone'), rearZone,);
-  r360.renderToSurface( r360.createRoot('LeftZone'), leftZone,);
-  r360.renderToSurface( r360.createRoot('TrayZone'), trayZone,);
+  
+  r360.renderToSurface( r360.createRoot('FrontZone',{ }), frontZone,);
+  r360.renderToSurface( r360.createRoot('RightZone',{ }), rightZone, );
+  r360.renderToSurface( r360.createRoot('RearZone',{ }), rearZone,);
+  r360.renderToSurface( r360.createRoot('LeftZone',{ }), leftZone,);
+  r360.renderToSurface( r360.createRoot('TrayZone',{ }), trayZone,);
 
   //recenter the floating tray
   setInterval(()=> {
     const cameraQuat = r360.getCameraQuaternion();
     trayZone.recenter(cameraQuat, 'yaw');
    },100);
+
+   
    // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('office360.jpg'));
 }

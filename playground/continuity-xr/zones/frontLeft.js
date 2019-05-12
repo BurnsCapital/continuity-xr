@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
 
-import { Hl , Btn_floating , Row} from '../index';
+import { Hl , Btn_floating , Row} from '../components';
 
 class Front extends React.Component {
   constructor(props) {
