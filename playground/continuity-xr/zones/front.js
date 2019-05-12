@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 import { toggleLight } from '../actions'
 
 import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
-import { Hl , Btn_floating , Row} from '../continuity-xr-components';
-//import { LightSwitchContainer } from '../containers/lightSwitch';
-//import { ModeFilters } from '../actions'
+import { Hl , Btn_floating , Row} from '../components';
 
 class Front extends React.Component {
   constructor(props) {

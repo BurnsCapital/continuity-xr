@@ -2,9 +2,9 @@ import React from 'react';
 import { AppRegistry } from 'react-360';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import rootReducer from './reducers'
+import rootReducer from './continuity-xr/reducers'
 
-import { Tray, Front, FrontRight, Right, RearRight, Rear, RearLeft, Left, FrontLeft   } from './zones';
+import { Tray, Front, FrontRight, Right, RearRight, Rear, RearLeft, Left, FrontLeft   } from './continuity-xr/zones';
 
 const store = createStore(rootReducer);
 
