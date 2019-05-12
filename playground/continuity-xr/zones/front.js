@@ -2,17 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { toggleLight } from '../actions'
 
-import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
-import { Hl , Btn_floating , Row} from '../components';
+import { Image, StyleSheet, Text, View, asset } from 'react-360';
+import { Hl , Btn_floating , Card, CardContainer} from '../components';
 
 class Front extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hover: false };   
+    this.state = { 
+      hover: false,
+   };
+     
   }
   
   componentDidMount() {
-    this.setState({ hover: false });
+    this.setState({ hover: false });    
   }
   
   render() {
@@ -22,17 +25,73 @@ class Front extends React.Component {
                 onEnter={() => this.setState({hover: true})}
                 onExit={() => this.setState({hover: false})}
                 >
-            <Hl msg="Current Mode:" />
-            <Hl msg={viewMode} />
-            <Btn_floating 
-              toggleTheme = {toggleTheme}
-              viewMode = {viewMode}
-            />
-            </View>
+                <Hl size="h6"  msg="Current Mode:" />
+                  
+              <CardContainer>
+                <Card viewMode = {viewMode}>      
+                  <Hl size="h6"  msg="Current Mode:" />
+                  <Hl size="h6"  msg={viewMode} />
+                  <Btn_floating 
+                    viewMode = {viewMode}
+                    toggleTheme = {toggleTheme}
+                    />
+                 </Card>
+                 <Card viewMode = {viewMode}>      
+                  <Hl size="h6"  msg="Current Mode:" />
+                  <Hl size="h6"  msg={viewMode} />
+                  <Btn_floating 
+                    viewMode = {viewMode}
+                    toggleTheme = {toggleTheme}
+                    />
+                 </Card>
+                 <Card viewMode = {viewMode}>      
+                  <Hl size="h6"  msg="Current Mode:" />
+                  <Hl size="h6"  msg={viewMode} />
+                  <Btn_floating 
+                    viewMode = {viewMode}
+                    toggleTheme = {toggleTheme}
+                    />
+                 </Card>
+                 <Card viewMode = {viewMode}>      
+                  <Hl size="h6" msg="Current Mode:" />
+                  <Hl size="h6" msg={viewMode} />
+                  <Btn_floating 
+                    viewMode = {viewMode}
+                    toggleTheme = {toggleTheme}
+                    />
+                 </Card>
+                 
+                 <Card viewMode = {viewMode}>      
+                  <Hl  size="h6" msg="Current Mode:" />
+                  <Hl  size="h6" msg={viewMode} />
+                  <Btn_floating 
+                    viewMode = {viewMode}
+                    toggleTheme = {toggleTheme}
+                    />
+                 </Card>
+                 <Card viewMode = {viewMode}>      
+                  <Hl size="h6"  msg="Current Mode:" />
+                  <Hl size="h6"  msg={viewMode} />
+                  <Btn_floating 
+                    viewMode = {viewMode}
+                    toggleTheme = {toggleTheme}
+                    />
+                 </Card>
+                 <Card viewMode = {viewMode}>      
+                  <Hl size="h6" msg="Current Mode:" />
+                  <Hl size="h6" msg={viewMode} />
+                  <Btn_floating 
+                    viewMode = {viewMode}
+                    toggleTheme = {toggleTheme}
+                    />
+                 </Card>
+               </CardContainer>
+              </View>
             </View>;
   }
 }
-
+//boneyard
+//<Image source={asset('Cody.jpg')} style={styles.image}/>
 
 const mapStateToProps = state => {
   return {
@@ -51,13 +110,18 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(Front);
 
 const styles = StyleSheet.create({
+    image : {
+      flexGrow: 1,
+      flexBasis: 5,
+    },
     panel: {
       // Fill the entire surface
       width: 850,
       height: 750,
-      backgroundColor: 'rgba(255, 255, 255, 1)',
+      backgroundColor: 'rgba(255, 255, 255, .05)',
       transform: [{translateX: 25}],
-      justifyContent: 'center',
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
       alignItems: 'center',
     },
   });

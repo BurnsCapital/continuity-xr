@@ -30,7 +30,7 @@ echo "Building Containers..."
 docker build -t continuity/playground:$COMMIT_TAG ./playground
 
 #add latest tag
-docker build -t continuity/playground: ./playground
+docker build -t continuity/playground:latest ./playground
 
 #push containers to registery
 #do helm stuff
