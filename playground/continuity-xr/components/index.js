@@ -10,6 +10,7 @@ import Btn_floating from './fab/btn_floating';
 //basic card
 import Card from './card/card';
 import CardHeader from './card/cardHeader';
+import CardContainer from './cardContainer/card_container';
 
 //typo
 
@@ -28,6 +29,7 @@ export {
    Btn_floating,
 
    Card,
+   CardContainer,
    Hl,
 
    //Panel,
