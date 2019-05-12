@@ -13,13 +13,15 @@ import Hl from './typography/hl';
 
 //panels
 
+//lightswitch
+//import LightSwitch from './lightSwitch/lightSwitch'
 
 //grid
 
 import Row from './row/row';
 
 export {
-
+   //LightSwitch,
    palette,
    
    Btn_basic,

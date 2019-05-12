@@ -33,7 +33,7 @@ function init(bundle, parent, options = {}) {
   //create half face zones
   
   //render everything to zones
-  //let hue = palette;
+  
   r360.renderToSurface( r360.createRoot('FrontZone',{ }), frontZone,);
   r360.renderToSurface( r360.createRoot('RightZone',{ }), rightZone, );
   r360.renderToSurface( r360.createRoot('RearZone',{ }), rearZone,);

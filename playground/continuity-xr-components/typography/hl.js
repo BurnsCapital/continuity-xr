@@ -19,7 +19,7 @@ class Hl extends React.Component {
         const { msg } = this.props;
         const txt_style = this.styles(); 
         return  <Text style={txt_style.hl}>
-                         { msg }
+                         { msg } {this.props.store}
                 </Text>
                 }
 
