@@ -22,7 +22,7 @@ cd ..
 
 # run tests on everything 
 echo "Runing tests..."
-npm run test
+#npm run test
 
 #build the containers with tags
 echo "Building Containers..."

@@ -1,0 +1,6 @@
+// Routes components
+
+module.exports =  {
+    
+    
+};
