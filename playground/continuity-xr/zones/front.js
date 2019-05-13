@@ -26,7 +26,7 @@ class Front extends React.Component {
                 onExit={() => this.setState({hover: false})}
                 >
               <Pano>
-                <LiveEnvCamera />
+                <LiveEnvCamera  />
               </Pano>
             
               <CardContainer>
