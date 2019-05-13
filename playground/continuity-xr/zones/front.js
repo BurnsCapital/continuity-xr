@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { toggleLight } from '../actions'
 
-import { Image, StyleSheet, Text, View, asset } from 'react-360';
+import { Pano, StyleSheet, Text, View, asset, LiveEnvCamera } from 'react-360';
 import { Hl , Btn_floating , Card, CardContainer} from '../components';
 
 class Front extends React.Component {
@@ -25,7 +25,9 @@ class Front extends React.Component {
                 onEnter={() => this.setState({hover: true})}
                 onExit={() => this.setState({hover: false})}
                 >
-                <Hl size="h6"  msg="Current Mode:" />
+            
+              <LiveEnvCamera />
+   
                   
               <CardContainer>
                 <Card viewMode = {viewMode}>      

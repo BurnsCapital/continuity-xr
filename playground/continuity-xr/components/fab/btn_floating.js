@@ -4,6 +4,7 @@ import {
     VrButton,
     Text,
     StyleSheet,
+    Environment,
   } from 'react-360';
 
 
@@ -22,6 +23,7 @@ class Btn_floating extends React.Component {
     }
     handleClick() {
         this.props.toggleTheme();
+        Environment.clearBackground();
         console.log(this.props.viewMode);
     }
 
