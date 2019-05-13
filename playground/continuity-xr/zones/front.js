@@ -25,10 +25,10 @@ class Front extends React.Component {
                 onEnter={() => this.setState({hover: true})}
                 onExit={() => this.setState({hover: false})}
                 >
+              <Pano>
+                <LiveEnvCamera />
+              </Pano>
             
-              <LiveEnvCamera />
-   
-                  
               <CardContainer>
                 <Card viewMode = {viewMode}>      
                   <Hl size="h6"  msg="Current Mode:" />
