@@ -10,14 +10,17 @@ const store = createStore(rootReducer);
 
 const FrontView = () =>
     <Provider store={store}>
-         
-        <Front />
-    </Provider>
+       <Front />
+    </Provider>;
 
+const TrayView = () =>
+    <Provider store={store}>
+       <Tray />
+    </Provider>;
 
 //pass through to app reg
 
-AppRegistry.registerComponent('TrayZone', () => Tray);
+AppRegistry.registerComponent('TrayZone', () => TrayView);
 AppRegistry.registerComponent('FrontZone', () => FrontView);
 AppRegistry.registerComponent('RightZone', () => Right);
 AppRegistry.registerComponent('RearZone', () => Rear);

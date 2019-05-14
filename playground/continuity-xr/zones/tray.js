@@ -1,7 +1,9 @@
 import React from 'react';
-import { AppRegistry, StyleSheet, Text, View, } from 'react-360';
+import { connect } from 'react-redux';
 
-import { Hl , Btn_floating , Row} from '../components';
+import { AppRegistry, StyleSheet, Text, View,  } from 'react-360';
+
+import { Hl , Btn_floating , Row, Clock, Switch,} from '../components';
 
 class Tray extends React.Component {
   constructor(props) {
@@ -10,30 +12,49 @@ class Tray extends React.Component {
   }
   
   componentDidMount() {
-    this.setState({ someKey: 'otherValue' });
+   
   }
   
   render() {
-    return <View> 
-           <View style={styles.panel}
-                onEnter={() => this.setState({hover: true})}
-                onExit={() => this.setState({hover: false})}>
-            
-            </View>
+    const { viewMode, toggleTheme } = this.props;
+    return <View>           
+              <Clock />
+              <Switch 
+                viewMode = {viewMode}
+                toggleTheme = {toggleTheme}
+              />
             </View>;
   }
 
   
 }
 
-export default Tray;
+const mapStateToProps = state => {
+  return {
+    viewMode : state.viewMode
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    toggleTheme(){ 
+            dispatch({type: 'TOGGLE_LIGHT'});
+          }
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tray);
+
+
 
 const styles = StyleSheet.create({
     panel: {
       // Fill the entire surface
       width: 1200,
       height: 350,
-      backgroundColor: 'rgba(255, 255, 0, 1)',
+      borderRadius: 20,
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+      opacity: .3,
       //    justifyContent: 'center',
       //alignItems: 'center',
     },
