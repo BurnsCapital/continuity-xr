@@ -14,7 +14,7 @@ function init(bundle, parent, options = {}) {
   // create zones 
   
   //user tray
-  const trayZone = new Surface(1200, 350, Surface.SurfaceShape.Flat);
+  const trayZone = new Surface(1000, 350, Surface.SurfaceShape.Flat);
   trayZone.setAngle(0, -Math.PI / 6);
   
   //main zones
