@@ -20,11 +20,15 @@ class Front extends React.Component {
   
   render() {
     const { viewMode, toggleTheme } = this.props;
-    return <View > 
+    return <View >
+              <Pano>
+                <LiveEnvCamera  />
+              </Pano> 
            <View style={styles.panel}
                 onEnter={() => this.setState({hover: true})}
                 onExit={() => this.setState({hover: false})}
                 >
+
               <CardContainer>
                 <Card viewMode = {viewMode}>      
                   <Hl size="h6"  msg="Current Mode:" />
