@@ -25,10 +25,6 @@ class Front extends React.Component {
                 onEnter={() => this.setState({hover: true})}
                 onExit={() => this.setState({hover: false})}
                 >
-              <Pano>
-                <LiveEnvCamera  />
-              </Pano>
-            
               <CardContainer>
                 <Card viewMode = {viewMode}>      
                   <Hl size="h6"  msg="Current Mode:" />
@@ -92,9 +88,15 @@ class Front extends React.Component {
             </View>;
   }
 }
-//boneyard
-//<Image source={asset('Cody.jpg')} style={styles.image}/>
-
+/*boneyard
+   <Pano>
+                <LiveEnvCamera  />
+              </Pano>
+           <Hl size="h6"  msg={this.props.store.viewMode} />
+              .h + ":" + m + ":" + s    
+              
+<Image source={asset('Cody.jpg')} style={styles.image}/>
+*/
 const mapStateToProps = state => {
   return {
     viewMode : state.viewMode

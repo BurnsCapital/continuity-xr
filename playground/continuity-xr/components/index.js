@@ -6,7 +6,7 @@ import palette from './palette';
 
 import Btn_basic from './buttons/btn_basic';
 import Btn_floating from './fab/btn_floating';
-
+import Switch from './switch/switch';
 //basic card
 import Card from './card/card';
 import CardHeader from './card/cardHeader';
@@ -20,6 +20,10 @@ import Hl from './typography/hl';
 
 //grid
 
+// custom 
+
+import Clock from './clock/clock';
+
 import Row from './row/row';
 
 export {
@@ -31,8 +35,9 @@ export {
    Card,
    CardContainer,
    Hl,
-
+   Switch,
    //Panel,
+   Clock,
    
    Row,
 }
